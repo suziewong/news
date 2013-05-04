@@ -1,5 +1,5 @@
 #
-# robots.txt for feel radio
+# robots.txt for Hacker News
 #
 
 User-agent: *
