@@ -5,6 +5,9 @@ class IndexAction extends Action {
     public function index(){
     	//var_dump($config);
     	//C('HOME_DEFAULT_THEME');
+    	//$Content = M("Content");
+		$page = isset($_GET['p'])? $_GET['p'] : '1';  //默认显示首页数据
+
     	$ContentList = array();
         $Model = new Model();
         $Content = $Model->query("select id,username,title,link,anonymous,time from dc_content,dc_user where dc_user.userid = dc_content.userid order by time desc ");
@@ -13,10 +16,13 @@ class IndexAction extends Action {
 		}
 		import("ORG.Util.Page");// 导入分页类
 		$count = count($ContentList);// 查询满足要求的总记录数
-		$length = 11;
+		$length = 20;
 		$offset = $length * ($page - 1);
 		$Page = new Page($count,$length,$page);// 实例化分页类 传入总记录数和每页显示的记录数和当前页数
-		$Page->setConfig('theme',' %upPage%   %linkPage%  %downPage%');
+		//$Page->setConfig('theme',' %upPage%   %linkPage%  %downPage%');
+		$Page->setConfig('prev','Older');
+		$Page->setConfig('next','More');
+		$Page->setConfig('theme',' %upPage%   %downPage%');
 		$show = $Page->show();// 分页显示输出
 		$this->assign("ContentList",$ContentList);
 		$this->assign("offset",$offset);
