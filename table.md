@@ -31,26 +31,3 @@ CREATE TABLE `dc_setting` (
   `item_key` varchar(50) NOT NULL COMMENT 'setting键',
   `item_value` varchar(70) NOT NULL COMMENT 'setting值'
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='设置表';
-
-
-CREATE TABLE `feel_suggest` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '建议ID',
-  `uid` int(11) unsigned NOT NULL COMMENT '；精弘ID',
-  `name` varchar(70) NOT NULL COMMENT '；昵称',
-  `email` varchar(70) NOT NULL COMMENT '；邮箱', 
- `posttime` int(10) unsigned NOT NULL COMMENT '；评论时间',
-  `suggest` varchar(300) DEFAULT NULL COMMENT '建议',
-  `support` smallint(5) unsigned NOT NULL COMMENT '；支持数量',
-  `oppose` smallint(5) unsigned NOT NULL COMMENT '；反对数量',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='建议表' 
-
-
-CREATE TABLE `feel_comment` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '评论ID',
-  `uid` int(11) unsigned NOT NULL COMMENT '；精弘ID',
-  `djid` int(11) unsigned NOT NULL COMMENT '；DJID',
-  `posttime` int(10) unsigned NOT NULL COMMENT '；评论时间',
-  `comment` varchar(300) DEFAULT NULL COMMENT '评论',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='评论表'

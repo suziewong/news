@@ -38,7 +38,6 @@ class UserAction extends Action {
                 session('username',$user_info['username']);
                 session('userpower',$user_info['userpower']);
                 session('lastlogintime',$user_info['lastlogintime']);
-                session('djid',$user_info['djid']);
                         
                         // 更新帐号登录信息
                 $loginip = get_client_ip();

@@ -11,11 +11,11 @@ class ContentAction extends CommonAction{
 			$data = array();
 			$data["title"]	= $_POST["title"];
 			$data["userid"]  = $_POST["userid"];
+
             $data["anonymous"]  = empty($_POST["anonymous"])?0:1;
+            
 			$data["link"]	= $_POST["link"];
             $data["time"]   = date("Y-m-d H:i:s");
-
-
 			$Content = M('Content');
             $result = $Content->add($data);
             if ( $result ){

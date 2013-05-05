@@ -7,19 +7,18 @@ class IndexAction extends Action {
     	//C('HOME_DEFAULT_THEME');
     	$ContentList = array();
         $Model = new Model();
-        $Content = $Model->query("select id,username,title,link,time from dc_content,dc_user where dc_user.userid = dc_content.userid order by time desc ");
+        $Content = $Model->query("select id,username,title,link,anonymous,time from dc_content,dc_user where dc_user.userid = dc_content.userid order by time desc ");
 		while (list($key, $val) = each($Content)) {
 		    array_push($ContentList,$val);
 		}
 		import("ORG.Util.Page");// 导入分页类
 		$count = count($ContentList);// 查询满足要求的总记录数
-		$length = 10;
+		$length = 11;
 		$offset = $length * ($page - 1);
 		$Page = new Page($count,$length,$page);// 实例化分页类 传入总记录数和每页显示的记录数和当前页数
 		$Page->setConfig('theme',' %upPage%   %linkPage%  %downPage%');
 		$show = $Page->show();// 分页显示输出
 		$this->assign("ContentList",$ContentList);
-
 		$this->assign("offset",$offset);
 		$this->assign("length",$length);
 		$this->assign("page",$show);
@@ -27,13 +26,28 @@ class IndexAction extends Action {
     	//$this->display(C('HOME_DEFAULT_THEME').':index');
 		$this->display();
 	}
-	public function dj()
+	public function about()
 	{
-		$this->display(C('HOME_DEFAULT_THEME').':dj');
+		$this->display();
 	}
-	public function test()
+	public function maktimes($date)
 	{
-		//echo C('HOME_DEFAULT_THEME').'/feel-static:index';
-		$this->display(C('HOME_DEFAULT_THEME').'/feel-static:index');
-	}
+		$time =  strtotime($date);
+	    $t=time()-$time;
+	     $f=array(
+	       '31536000'=> '年',
+	       '2592000' => '个月',
+	       '604800'  => '星期',
+	       '86400'   => '天',
+	       '3600'    => '小时',
+	       '60'      => '分钟',
+	       '1'       => '秒'
+	   );
+	   foreach ($f as $k=>$v){        
+	       if (0 !=$c=floor($t/(int)$k)){
+	           return $c.$v.'前';
+	       }
+	   }
+	 } 
+
 }
