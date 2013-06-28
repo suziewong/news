@@ -15,7 +15,7 @@ class ContentAction extends Action{
 
 			$data = array();
 			$data["title"]	= $_POST["title"];
-			$data["userid"]  = session("userid");
+			//$data["userid"]  = !empty(session("userid"))?0:1;
             $data["anonymous"]  = empty($_POST["anonymous"])?0:1;
 			$data["link"]	= $_POST["link"];
             $data["time"]   = date("Y-m-d H:i:s");

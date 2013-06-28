@@ -1,11 +1,10 @@
 Hacker News programmed by PHP and MySQL
-==========
+=======================================
 
-用PHP+MySQL仿写Hacker News
     
-#### 开发人员
+作者:[SuzieWong](http://www.imsuzie.com)
     
-    郑洋飞
+    
 
 
 #### Todolist

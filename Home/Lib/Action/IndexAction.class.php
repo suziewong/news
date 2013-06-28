@@ -10,13 +10,15 @@ class IndexAction extends Action {
 
     	$ContentList = array();
         $Model = new Model();
-        $Content = $Model->query("select id,username,title,link,anonymous,time from dc_content,dc_user where dc_user.userid = dc_content.userid order by time desc ");
+        //$Content = $Model->query("select id,username,title,link,anonymous,time from dc_content,dc_user where dc_user.userid = dc_content.userid order by time desc ");
+        $Content = $Model->query("select id,title,link,anonymous,time from dc_content order by time desc ");
+		//var_dump($Content);
 		while (list($key, $val) = each($Content)) {
 		    array_push($ContentList,$val);
 		}
 		import("ORG.Util.Page");// 导入分页类
 		$count = count($ContentList);// 查询满足要求的总记录数
-		$length = 20;
+		$length = 10;
 		$offset = $length * ($page - 1);
 		$Page = new Page($count,$length,$page);// 实例化分页类 传入总记录数和每页显示的记录数和当前页数
 		//$Page->setConfig('theme',' %upPage%   %linkPage%  %downPage%');
@@ -54,6 +56,10 @@ class IndexAction extends Action {
 	           return $c.$v.'前';
 	       }
 	   }
-	 } 
+	 }
+	 public function team()
+	 {
+	 	$this->display();
+	 }
 
 }
