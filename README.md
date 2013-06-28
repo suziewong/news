@@ -1,4 +1,4 @@
-Hacker News programmed by PHP and MySQL
+Hacker News 
 =======================================
 
     
