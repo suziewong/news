@@ -7,9 +7,9 @@
                         
                         <volist name="ContentList" id="Content" offset="$offset" length="$length">
                         <tr>
-                            <td width=20px >{$key}</td>
+                            <td width=20px>{$key}</td>
                             <td width=12px><a href="#"><i class="icon-chevron-up"></i></a></td>
-                            <td colspan="2"><a href="{$Content.link}" target="_blank">{$Content.title}</a><br />0 point by <if condition="$Content.anonymous eq 1">匿名<else />{$Content.username}</if>  {$Content.time} | discuss</td>
+                            <td colspan="2"><a href="{$Content.link}" target="_blank" class="contenttitle">{$Content.title}</a><br /><br/><p class="contentu">0 point by <if condition="$Content.anonymous eq 1">匿名<else />{$Content.username}</if>  {$Content.time} | discuss</p></td>
                         </tr>
                         </volist>
                         
@@ -48,6 +48,15 @@
         }
         #dir_table tr{
             height: 60px;
+
+        }
+        .contenttitle {
+            font-size: 16px;
+            font-family: "Helvetica Neue",Helvetica,"Microsoft Yahei",Arial,sans-serif;
+        }
+        .contentu {
+            color: #828282;
+            margin:0px;
         }
     </style>
 </html>
