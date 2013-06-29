@@ -1,0 +1,45 @@
+.outuser {
+
+        margin-left: 60px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-family: "Helvetica Neue",Helvetica,"Microsoft Yahei",Arial,sans-serif;
+        width: 80%;
+        padding: 40px;
+        background:rgba(0,0,0,.8);
+}
+.outuser li {
+        list-style-type:none;
+        margin-top: 20px;
+}
+body {
+    background: url(../images/loginbg2.jpg);
+    background-repeat:no-repeat;
+}
+
+a {
+  color: rgba(255,255,255,.6);
+}
+a:hover {
+  color: #fff;
+}
+h2 {
+  color: #fff;
+}
+label {
+  color: #fff;
+  font-size: 16px;
+}
+.newlogin {
+  margin-top: 20px;
+}
+input {
+  background-color:  rgba(255,255,255,.2);
+}
+button {
+  margin-top: 10px;
+  width: 100px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;   /* 圆的半径为边长的一半，即300px */
+  -webkit-border-radius: 5px;
+}

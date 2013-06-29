@@ -1,0 +1,44 @@
+   <include file="Public:header" />
+        <div class="container">
+              <div class="outuser">
+                <h2>您可以使用社交网络账号登录:</h2>
+                <ul>
+                  <li><a href="{:U('login?type=qq')}">腾讯QQ用户登录</a></li>
+                  <li><a href="{:U('login?type=sina')}">新浪微博用户登录</a></li>
+                  <li><a href="{:U('login?type=renren')}">人人网用户登录</a></li>
+                  <li><a href="{:U('login?type=douban')}">豆瓣网用户登录</a></li>
+                  <li><a href="{:U('login?type=github')}">Github用户登录</a></li>
+                  <li><a href="{:U('login?type=google')}">Google用户登录</a></li>
+                </ul>
+                <h2>新注册一个账号:</h2>
+              <div class="newlogin">
+              <form class="form-horizontal" action="{:U('User/checklogin')}" method="POST">
+                <div class="control-group">
+                  <label class="control-label" for="inputUser">Username</label>
+                  <div class="controls">
+                    <input type="text" id="inputUser" placeholder="Username" name="username">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="inputPassword">Password</label>
+                  <div class="controls">
+                    <input type="password" id="inputPassword" placeholder="Password" name="password">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="controls">
+                    <label class="checkbox">
+                      <input type="checkbox"> Remember me
+                    </label>
+                    <button type="submit" class="btn">登录</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            </div>
+            </div>
+        </div>
+
+    </body>
+      <link href="__PUBLIC__/Css/index.css" rel="stylesheet" media="screen">
+</html>
