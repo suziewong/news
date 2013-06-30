@@ -67,11 +67,10 @@ class UserAction extends Action{
         $url = "http://user.zjut.com/api.php?app=member&action=login&username=".$username."&password=".$password;
         $result = json_decode(file_get_contents($url));
         // 设置登录信息
-        /*var_dump($result);
-        exit;*/
+        /**/
         if($result->state == "success")
         {
-            session('uid',$result->data->uid);
+            session('userid',$result->data->uid);
             session('username',$result->data->username);
             session('email',$result->data->email);
             session('avatar',$result->data->avatar);
@@ -86,7 +85,7 @@ class UserAction extends Action{
     }
     public function jhlogout()
     {
-        if(session('userid')) {    
+        if(session('userid')) { 
             session('userid',null);
             session('username',null);
             session('email',null);
@@ -177,6 +176,7 @@ class UserAction extends Action{
             dump($user_info);*/
             session('userid',$token['openid']);
              session('username',$user_info['name']);
+             session('avatar',$user_info['head']);
              redirect(U('Index/index'));
         }
     }
