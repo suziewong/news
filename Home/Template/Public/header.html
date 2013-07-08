@@ -9,7 +9,7 @@
         <style type="text/css">
         body {
             padding-top: 60px;
-            padding-bottom: 40px;
+           /* padding-bottom: 40px;*/
         }
         .sidebar-nav {
             padding: 9px 0;
@@ -58,7 +58,8 @@
             width:24px; 
             height:24px;
             margin-top: 6px;
-            border:2px solid #fff;
+            border:2px solid rgba(255,255,255,.3);
+
         }
         li a {
             font-size: 15px;
@@ -81,11 +82,13 @@
                      <li class="">
                         <a href="{:U('Index/about')}">关于</a>
                      </li>
+                     <!--
                      <li>
                         <a href="{:U('Index/team')}" target="_blank">团队</a>
                      </li>
+                    -->
                    </ul>
-                    <form class="navbar-search pull-right" data-bind="submit: search.addDish">
+                    <form class="navbar-search pull-middle" data-bind="submit: search.addDish">
                         <input id="search-dish" type="text" class="search-query" data-provide="typeahead" data-bind="搜索" rel="tooltip" data-placement="left" data-trigger="manual" data-original-title="再次回车" placeholder="Search">
                     </form>
                      <ul class="nav pull-right">
